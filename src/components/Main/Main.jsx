@@ -1,12 +1,14 @@
 import style from './Main.module.css';
 import Paragraph from './Paragraph/Paragraph';
-import Image from './Image/Image';
+import ImageCard from './ImageCard/ImageCard';
+import CardBG from '../../img/card.jpg'; //Передали картинку background
 
 const Main = () => (
     <main className={style.card}>
         <div className={style.wrapper}>
             <div className={style.image}>
-                <Image />
+                {/* С помощью props передали картинку */}
+                <ImageCard img={CardBG} />
                 <Paragraph />
             </div>
         </div>

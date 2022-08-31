@@ -1,16 +1,15 @@
 import style from './Paragraph.module.css';
+import { useContext } from 'react';
+import { textContext } from '../../../context/textContext'
 
-const Paragraph = () => (
-    <p className={style.felicitation}>Поздравляю с днем рожденья!<br />
-        Пусть будет жизнь полна веселья,<br />
-        Не будет грусти и хлопот,<br />
-        А только счастье круглый год!<br /><br />
+const Paragraph = () => {
+    const { text } = useContext(textContext);
 
-        Желаю творческих успехов,<br />
-        Прекрасных дней, улыбок, смеха.<br />
-        Любви, душевного тепла,<br />
-        Как сказка, чтобы жизнь была!<br />
-    </p>
-);
+    return (
+        <p className={style.felicitation}>
+            {text}
+        </p>
+    )
+};
 
 export default Paragraph;
